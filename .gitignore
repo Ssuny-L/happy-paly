@@ -105,8 +105,8 @@ dist
 
 
 #Design file
-.psd
-.ai
+*.psd
+*.ai
 
 #package file
 package.json
