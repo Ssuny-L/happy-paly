@@ -1,0 +1,46 @@
+/**
+These fonts are licensed under the Open Font License
+(https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
+
+You can use them freely in your products & projects - print or digital,
+commercial or otherwise. However, you can't sell the fonts on their own.
+
+This isn't legal advice, please consider consulting a lawyer and
+see the full license for all details.
+*/
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 700;
+  font-display: swap;
+  src: local('Noto Sans KR Bold'),
+  url('../fonts/NotoSansKR-Bold.woff2') format('woff2'),
+  url('../fonts/NotoSansKR-Bold.woff') format('woff'),
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 400;
+  font-display: swap;
+  src: local('Noto Sans KR Regular'),
+  url('../fonts/NotoSansKR-Regular.woff2') format('woff2'),
+  url('../fonts/NotoSansKR-Regular.woff') format('woff'),
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 100;
+  font-display: swap;
+  src: local('Noto Sans KR Thin'),
+  url('../fonts/NotoSansKR-Thin.woff2') format('woff2'),
+  url('../fonts/NotoSansKR-Thin.woff') format('woff'),
+}
+
+@font-face {
+  font-family: 'Black Han Sans';
+  font-weight: 400;
+  font-display: swap;
+  src: local('Black Han Sans Regular'),
+  url('../fonts/BlackHanSans-Regular.woff2') format('woff2'),
+  url('../fonts/BlackHanSans-Regular.woff') format('woff'),
+}
