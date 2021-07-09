@@ -1,0 +1,96 @@
+$rootUnit: 16px !default;
+$breakpoint: 768px; //테블릿 화면크기
+
+//function
+@function removeUnit($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+@function rem($value, $base:$rootUnit) {
+  @return (removeUnit($value / $base)) * 1rem;
+}
+
+@function em($value, $base:$rootUnit) {
+  @return (removeUnit($value / $base)) * 1em;
+}
+
+
+// mixin
+@mixin clearfix {
+  &::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+} //flaot-clear
+
+@mixin marginX($marginValue: auto) {
+  margin-left: $marginValue;
+  margin-right: $marginValue;
+} //가로로 가운데
+
+@mixin boxFull($width: 100vw) {
+  width: $width;
+  position: relative;
+  left: 50%;
+  margin-left: -$width / 2;
+  @content;
+} //부모의 넓이 한정되어 있을 때 자식에게 화면넓이 설정
+
+@mixin boxFixed($width: 460px, $paddingX: 0) {
+  width: $width;
+  padding-left: $paddingX;
+  padding-right: $paddingX;
+  @include marginX;
+  @content;
+}
+
+
+// 반응형
+@mixin mobile {
+  @media screen and (min-width: $breakpoint - 1) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+
+
+// flex
+@mixin flexBox($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $breakpoint;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+
+// 내용 숨기기
+@mixin a11y {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  visibility: hidden;
+  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
+} // 숨김 항목
+
+@mixin a11yFocus {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+} // 항목은 숨기되 포커스 이동은 보이도록 처리
+
+@mixin custumOutline {
+  box-shadow: 0 0 0 2px $outline;
+  border-radius: 2px;
+} // 숨김 항목의 포터스 이동 보이게 함
