@@ -24,6 +24,11 @@ $breakpoint: 768px; //테블릿 화면크기
   }
 } //flaot-clear
 
+@mixin autoMargin($marginX: auto){
+  margin-left: $marginX;
+  margin-right: $marginX;
+}
+
 @mixin marginX($marginValue: auto) {
   margin-left: $marginValue;
   margin-right: $marginValue;
