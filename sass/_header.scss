@@ -1,5 +1,207 @@
 .header {
+  width: 100vw;
+  height: auto;
+  overflow: hidden;
+
   &__logo {
-    width: ;
+    width: 170px;
+
+    a {display: block;}
+
+    @include marginAutoX;
+
+    @include mobile {
+      width: percentage(72px / 320px);
+      margin: 12px 0;
+    }
+
+    @include tablet{
+      width: 130px;
+      margin-top: em(20px);
+      margin-bottom: em(20px);
+    }
+
   }
+
+  &__menu {
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 700;
+    }
+
+    &__desktopView {
+
+      display: none;
+
+      @include desktop {
+
+        @include flexBox($justify: space-between);
+
+        width: 200px;
+        margin-left: 60px;
+        margin-top: -63px;
+        margin-bottom: 45px;
+      }
+
+      &__item a {
+        display: block;
+        width: auto;
+        padding: 0 10px;
+        position: relative;
+      }
+
+      &__item a::after {
+        content: "";
+        display: inline-block;
+        width: 0%;
+        height: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: rgba($yellow, 0.5);
+        z-index: -300;
+
+        transition: width 200ms;
+      }
+
+      &__item a:hover::after,
+      &__item a:focus::after {width: 100%;}
+
+      &__item.active a::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: rgba($yellow, 1);
+        z-index: -300;
+
+        transition: width 200ms;
+      }
+
+    }
+
+    &__open {
+      @include flexBox ($direction: column, $justify: space-between);
+      width: 33px;
+      height: 27px;
+      cursor: pointer;
+      
+      position: absolute;
+      right: 30px;
+      top: em(40px);
+
+      transition: all 300ms;
+
+      &:focus,
+      &:hover {
+        transform: rotate(270deg);
+      }
+
+      &__line {
+        display: block;
+        width: 100%;
+        height: 5px;
+        background-color: $text;
+      }
+
+    }
+
+  }
+
+  &__menuAll {
+    width: 0vw;
+    overflow: hidden;
+    opacity: 0;
+    background-color: rgba($blackDark, 0.98);
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    transition: width 400ms;
+
+    &.active {
+      display: block;
+      width: 50vw;
+      height: 100vh;
+      opacity: 1;
+
+      z-index: 200;
+
+      &::after {
+        content: "";
+        height: 50%;
+        width: 50%;
+        background-color: orangered;
+
+        position: relative;
+        left: 0;
+      }
+
+      .menu__close {
+        display: inline-block;
+        color: $white;
+        font-size: em(28px);
+        cursor: pointer;
+        transform: rotateZ(45deg);
+
+        position: absolute;
+        top: em(20px);
+        right: em(20px);
+
+        transition: all 200ms;
+
+        &:hover,
+        &:focus {
+          transform: rotateZ(408deg);
+        }
+
+      }
+
+      @include mobile {
+        width: 100vw;
+
+        .menu__close {
+          font-size: em(34px);
+        }
+
+      }
+
+    }
+
+    &__step1 {
+      margin-top: em(210px);
+      padding: em(40px);
+
+      li {
+        color: $white;
+        font-weight: 400;
+        font-size: em(24px);
+        padding-top: em(16px);
+        padding-bottom: em(16px);
+
+        a {
+          padding-right: em(0px);
+
+          transition: padding-right 200ms;
+
+          &:hover,
+          &:focus {
+            padding-right: em(15px);
+            background: url(../images/menuAll_hover.png) no-repeat right center / em(12px);
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
 }

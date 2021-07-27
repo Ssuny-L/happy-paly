@@ -4,10 +4,43 @@ body *, body *::before, body *::after {
   font: inherit;
   box-sizing: border-box;
 }
+ul, ol, li, dl, dt, dd {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
 // 내용 숨기기
 .a11yHidden {
   @include a11y;
+}
+.skip {
+  p {
+    text-align: center;
+
+    a {
+      display: block;
+      padding: em(10px);
+
+      @include a11yFocus;
+    }
+
+    a:focus {
+      width: 100vw;
+      height: auto;
+      opacity: 1;
+      background-color: #fff;
+
+      @include custumOutline;
+    }
+  }
+
+  
+}
+
+//footer
+footer {
+  width: 100vw;
 }
 
 // 반응형 이미지
@@ -24,3 +57,18 @@ body {
   background-color: $default;
   color: $text;
 }
+
+.container {
+  @include flexBox(column);
+  min-height: 100vh;
+ 
+  @include mobile{
+   @include boxFixed(100%, 20px);
+   font-size: em(13px);
+  }
+ 
+  @include tablet{
+   @include boxFixed(100vw);
+   font-size: em(14px);
+  }
+ }
