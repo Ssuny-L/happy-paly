@@ -17,10 +17,38 @@
   <title>행복이 자라는 놀이터</title>
 </head>
 <body>
+  <div class="skip">
+    <p class="skip_menu"><a href="#mainVisual">메뉴 건너뛰기</a></p>
+    <p class="skip_content"><a href="#footer">하단 바로가기</a></p>
+  </div>
   <div class="container">
     <header class="header">
-      <div class="header__logo"></div>
-      <div class="header__menu"></div>
+      <h1 class="header__logo">
+        <a href="./" target="_blank" rel="noopener noreferrer">
+          <img srcset="./images/logo_color.svg" src="./images/logo_color.png" alt="행복이 자라는 놀이터">
+        </a>
+      </h1>
+      <div class="header__menu">
+        <div class="header__menu__desktopView">
+          <div class="header__menu__desktopView__item"><a href="#">놀이란?</a></div>
+          <div class="header__menu__desktopView__item"><a href="#">놀 권리</a></div>
+        </div>
+        <a class="header__menu__open">
+          <span class="header__menu__open__line"></span>
+          <span class="header__menu__open__line"></span>
+          <span class="header__menu__open__line"></span>
+        </a>
+        <div class="header__menuAll">
+          <ul class="header__menuAll__step1">
+            <li><a href="#">행복이 자라는 놀이터</a></li>
+            <li><a href="#">놀이란?</a></li>
+            <li><a href="#">놀 권리</a></li>
+            <li><a href="#">행복한 놀이터란?</a></li>
+            <li><a href="#">전주시 숲 놀이터 / 체험원</a></li>
+          </ul>
+          <a class="menu__close">&#9532;</a>
+        </div>
+      </div>
       <div class="header__contactUs"></div>
     </header>
     <main class="main">
@@ -62,8 +90,11 @@
           </div>
         </div>
       </div>
-      <div class="main__content"></div>
+      <div id="mainContent" class="main__content"></div>
     </main>
+    <footer id="footer" class="footer">
+      © 2021 행복이 자라는 놀이터. <span lang="en">ALL RIGHTS RESERVED. Designed by Ssun.</span>
+    </footer>
   </div>
 </body>
 <link rel="shortcut icon" href="favicon.ico">
