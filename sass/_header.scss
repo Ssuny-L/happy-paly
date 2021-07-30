@@ -1,26 +1,46 @@
+.header__wrap {
+  @include clearfix;
+
+  height: em(92px);
+
+  z-index: 1000;
+}
+
 .header {
   width: 100vw;
   height: auto;
-  overflow: hidden;
+  padding-top: em(30px);
+  padding-bottom: em(30px);
+  background: $white;
+  float: left;
+
+  position: fixed;
+  top: 0;
 
   &__logo {
-    width: 170px;
+    width: 150px;
 
     a {display: block;}
 
     @include marginAutoX;
 
-    @include mobile {
-      width: percentage(72px / 320px);
-      margin: 12px 0;
-    }
-
     @include tablet{
       width: 130px;
       margin-top: em(20px);
       margin-bottom: em(20px);
+      margin-left: em(30px);
     }
 
+    @include mobile {
+      width: percentage(72px / 320px);
+      margin-top: em(30px);
+    }
+
+  }
+
+  @include tablet {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   &__menu {
@@ -91,7 +111,7 @@
       cursor: pointer;
       
       position: absolute;
-      right: 30px;
+      right: em(30px);
       top: em(40px);
 
       transition: all 300ms;
@@ -106,6 +126,10 @@
         width: 100%;
         height: 5px;
         background-color: $text;
+      }
+
+      @include mobile {
+        top: em(34px);
       }
 
     }
@@ -131,7 +155,7 @@
       height: 100vh;
       opacity: 1;
 
-      z-index: 200;
+      z-index: 300;
 
       &::after {
         content: "";
@@ -146,19 +170,21 @@
       .menu__close {
         display: inline-block;
         color: $white;
-        font-size: em(28px);
+        font-size: em(38px);
+        height: em(20px);
+        line-height: em(18px);
         cursor: pointer;
-        transform: rotateZ(45deg);
+        transform: rotateZ(0deg);
 
         position: absolute;
-        top: em(20px);
-        right: em(20px);
+        top: em(16px);
+        right: em(16px);
 
         transition: all 200ms;
 
         &:hover,
         &:focus {
-          transform: rotateZ(408deg);
+          transform: rotateZ(360deg);
         }
 
       }
@@ -198,6 +224,10 @@
 
         }
 
+      }
+
+      @include tablet {
+        margin-top: em(70px);
       }
 
     }

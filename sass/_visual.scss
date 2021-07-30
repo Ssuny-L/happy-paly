@@ -1,0 +1,335 @@
+.visual {
+
+  width: 100vw;
+  max-width: 1920px;
+  @include marginAutoX;
+
+  position: relative;
+
+  &__wrap {
+    @include clearfix;
+  }
+
+  &__item {
+    padding-right: 0 em(85px);
+
+    position: relative;
+
+    &__image {
+      width: 50%;
+      min-width: 750px;
+      max-width: 968px;
+      height: auto;
+      opacity: 0;
+    }
+
+    &__content {
+      width: 100%;
+      max-width: em(1200px);
+      text-align: right;
+
+      position: absolute;
+      bottom: 3vw;
+      right: em(40%);
+
+      &__title {
+        @include bigTitle;
+        padding-bottom: em(7px);
+        
+        opacity: 0;
+      }
+
+      &__text {
+        @include smallTitle;
+        
+        line-height: em(24px);
+        padding-bottom: em(56px);
+        padding-right: em(3px);
+        opacity: 0;
+
+        span {display: block;}
+      }
+
+      &__btnBox {opacity: 0;}
+
+    }
+    
+    &.swiper-slide-active {
+
+      .visual__item__image {
+        opacity: 1;
+
+        transition: opacity 1.6s .1s;
+      }
+
+      .visual__item__content {
+        &__title {
+          opacity: 1;
+
+          transition: opacity 1.6s 1s;
+        }
+  
+        &__text {
+          opacity: 1;
+          
+          transition: opacity 2s 1.6s;
+  
+          span {display: block;}
+
+        }
+
+        &__btnBox {
+          opacity: 1;
+          
+          transition: opacity 2.2s 2s;
+        }
+
+      }
+
+    }
+
+    &.swiper-slide-prve {
+      opacity: 0;
+      transition: opacity 2s;
+    }
+
+  }
+
+  &__navigation {
+    text-align: right;
+
+    position: absolute;
+    bottom: 2.5vw;
+    right: em(74%);
+    z-index: 2;
+
+    .swiper-button-prev.is-prev,
+    .swiper-button-next.is-next {
+      width: fit-content;
+      height: auto;
+      margin-top: 0;
+      z-index: auto;
+      cursor: pointer;
+      display: inline-block;
+      color: inherit;
+      font-weight: 100;
+
+      position: unset;
+      top: unset;
+      left: unset;
+      right: unset;
+    }
+
+    .swiper-button-prev.is-prev::after,
+    .swiper-button-next.is-next::after {
+      font-size: em(40px);
+    }
+
+    .swiper-button-prev.is-prev::after {
+      content: '⟵';
+    }
+
+    .swiper-button-next.is-next::after {
+      content: '⟶';
+    }
+    
+  }
+
+  &__state {
+    position: relative;
+    bottom: 510px;
+    text-align: right;
+    right: em(84%);
+
+    z-index: 1;
+
+    &Box {
+      @include flexBox ($justify: space-between, $align: flex-start);
+      display: inline-flex;
+
+      width: 160px;
+
+      .stopPlay {
+        width: 14px;
+        text-align: center;
+
+        button {
+          width: 14px;
+          height: 16px;
+          line-height: 14px;
+          background-color: rgba($red, 0);
+          color: $text;
+          font-weight: 700;
+          font-size: em(18xp);
+          border: 0;
+          padding-bottom: em(3px);
+          cursor: pointer;
+        }
+      }
+
+      .swiper-pagination-bullets {
+        width: 121px;
+
+        position: relative;
+
+        .swiper-pagination-bullet {
+          color: $text;
+          opacity: 0;
+
+          position: absolute;
+          top: 0;
+          left: 0;
+      
+          &::after {
+            content: "";
+            display: block;
+            width: em(0px);
+            height: 2px;
+            margin-left: em(20px);
+            margin-top: -9px;
+            background-color: $blackDark;
+          }
+
+          &-active {
+            opacity: 1;
+            
+            &::after {
+              width: 105px;
+
+              transition: 4400ms;
+            }
+
+          }
+
+        }
+
+      }
+
+      .visual__state__totalPage {
+        padding-left: em(10px);
+      }
+
+    }
+
+    .swiper-pagination-bullet,
+    .swiper-pagination-bullet-active {
+      background-color: unset;
+    }
+
+  }
+
+  @include tablet {
+    @include boxFull;
+
+    &__item {
+  
+      &__image {
+        width: 100vw;
+        min-width: unset;
+        max-width: unset;
+        overflow: hidden;
+      }
+  
+      &__content {
+        width: 100vw;
+        max-width: 943px;
+        padding-left: em(16px);
+        padding-right: 0;
+        padding-top: em(34px);
+        text-align: left;
+  
+        position: unset;
+        bottom: unset;
+        right: unset;
+  
+        &__title {
+          @include bigTitle ($font-size: em(46px));
+          
+          padding-bottom: em(5px);
+        }
+  
+        &__text {
+          @include smallTitle ($font-size: em(24px));
+
+          padding-bottom: em(30px);
+        }
+  
+      }
+  
+    }
+
+    &__navigation {
+      bottom: em(240px);
+      right: em(36%);
+      .swiper-button-prev.is-prev,
+      .swiper-button-next.is-next {
+        padding: em(5px);
+        margin-left: em(5px);
+      }
+  
+      .swiper-button-prev.is-prev::after,
+      .swiper-button-next.is-next::after {
+        font-size: em(28px);
+      }
+      
+    }
+
+    &__state {
+      text-align: left;
+      bottom: em(250px);
+      left: em(36px);
+      right: unset;
+    }
+    
+  }
+
+  @include mobile {
+
+    &__item {
+
+      &__content {
+        max-width: unset;
+        padding-left: em(9px);
+        padding-top: em(24px);
+      
+        &__title {
+          @include bigTitle ($font-size: em(34px));
+
+          span {
+            display: block;
+            width: 100%;
+          }
+        }
+
+        &__text {
+          @include smallTitle ($font-size: em(17px));
+
+          span {
+            display: block;
+            width: 100%;
+          }
+        }
+
+      }
+
+    }
+
+    &__navigation {
+      bottom: em(228px);
+      right: em(12%);
+  
+        .swiper-button-prev.is-prev::after,
+        .swiper-button-next.is-next::after {
+          font-size: em(24px);
+        }
+      
+      }
+
+    &__state {
+      bottom: em(235px);
+      left: em(20px);
+    }
+
+  }
+
+}

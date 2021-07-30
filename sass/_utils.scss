@@ -46,6 +46,22 @@ $breakpointTablet: 768px; //테블릿 화면크기
   @content;
 }
 
+@mixin bigTitle ($font-size: em(76px), $color: inherit) {
+  font-family: 'Black Han Sans';
+  font-size: $font-size;
+  font-weight: 400;
+  letter-spacing: em(-1px);
+  color: $color;
+}
+
+@mixin smallTitle ($font-size: em(30px), $color: inherit)  {
+  font-family: 'Noto Sans KR';
+  font-size: $font-size;
+  font-weight: 700;
+  letter-spacing: em(-1.5px);
+  color: $color;
+}
+
 
 // 반응형
 @mixin mobile {
@@ -55,7 +71,7 @@ $breakpointTablet: 768px; //테블릿 화면크기
 }
 
 @mixin tablet {
-  @media screen and (min-width: $breakpointTablet) {
+  @media screen and (max-width: $breakpointdesktop - 1) {
     @content;
   }
 }

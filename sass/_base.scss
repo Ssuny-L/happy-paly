@@ -35,7 +35,16 @@ ul, ol, li, dl, dt, dd {
     }
   }
 
-  
+}
+
+//button
+.is-btnBox {
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+
 }
 
 //footer
@@ -63,12 +72,10 @@ body {
   min-height: 100vh;
  
   @include mobile{
-   @include boxFixed(100%, 20px);
    font-size: em(13px);
   }
  
   @include tablet{
-   @include boxFixed(100vw);
    font-size: em(14px);
   }
  }
