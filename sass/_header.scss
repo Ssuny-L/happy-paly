@@ -1,21 +1,24 @@
 .header__wrap {
-  @include clearfix;
+  width: 100vw;
+  height: em(140px);
+  padding-top: em(30px);
+  padding-bottom: em(30px);
+  background-color: $white;
 
-  height: em(92px);
+  position: fixed;
+  top: 0;
 
   z-index: 1000;
 }
 
 .header {
   width: 100vw;
+  max-width: 1820px;
   height: auto;
-  padding-top: em(30px);
-  padding-bottom: em(30px);
   background: $white;
   float: left;
 
-  position: fixed;
-  top: 0;
+  @include marginAutoX;
 
   &__logo {
     width: 150px;
@@ -44,6 +47,8 @@
   }
 
   &__menu {
+    @include clearfix;
+
     a {
       text-decoration: none;
       color: inherit;
@@ -60,8 +65,7 @@
 
         width: 200px;
         margin-left: 60px;
-        margin-top: -63px;
-        margin-bottom: 45px;
+        margin-top: -23px;
       }
 
       &__item a {
@@ -109,10 +113,8 @@
       width: 33px;
       height: 27px;
       cursor: pointer;
-      
-      position: absolute;
-      right: em(30px);
-      top: em(40px);
+      float: right;
+      margin-top: -1.5%;
 
       transition: all 300ms;
 
@@ -177,8 +179,8 @@
         transform: rotateZ(0deg);
 
         position: absolute;
-        top: em(16px);
-        right: em(16px);
+        top: em(25px);
+        right: em(44px);
 
         transition: all 200ms;
 

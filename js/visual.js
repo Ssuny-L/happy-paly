@@ -1,5 +1,5 @@
-
-  var swiper = new Swiper(".visual__container.swiper-container", {
+$(document).ready(function() {
+  var swiper = new Swiper(".visual__container", {
     spaceBetween: 30,
     //centeredSlides: true,
     slidesPerView: 1,
@@ -22,15 +22,16 @@
     }
   });
 
-
-  $('.autoplayStart').on('click', function(){
+  $('.visual .autoplayStart').click(function(){
     swiper.autoplay.start();
     $(this).toggle().siblings().toggle();
     return false;
   });
 
-  $('.autoplayStop').on('click', function(){
+  $('.visual .autoplayStop').click(function(){
     swiper.autoplay.stop();
     $(this).toggle().siblings().toggle();
     return false;
   });
+  
+});

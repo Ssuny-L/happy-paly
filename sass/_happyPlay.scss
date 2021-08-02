@@ -1,0 +1,60 @@
+.happyPlay {
+  color: $white;
+  padding-top: em(160px);
+  padding-bottom: em(160px);
+  background-color: $blackDark;
+
+  @include tablet {
+    margin-top: em(0);
+    padding-top: em(100px);
+    padding-bottom: em(100px);
+  }
+
+  .content_title {
+    text-align: center;
+
+    * {display: block;}
+
+    .smallTitle {
+      font-size: em(24px);
+      color: $grayDark;
+    }
+
+    .bigTitle {
+      @include smallTitle ($font-size: em(64px));
+
+      @include tablet {
+        font-size: em(44px);
+        letter-spacing: 0;
+      }
+    }
+
+  }
+
+  &__slide {
+    @include boxFull;
+  }
+
+  &Slide__item {
+
+    &__image {padding: em(90px) 0 em(30px) 0;}
+
+    &__content {
+      &.is-wrap p {
+        width: em(454px);
+        line-height: 1.5em;
+        padding-bottom: em(6px);
+
+        @include tablet { width: em(420px);}
+
+        @include mobile { width: em(230px);}
+
+      }
+      &__title {
+        @include smallTitle ($font-size:em(24px));
+      }
+    }
+
+  }
+
+}

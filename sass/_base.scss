@@ -69,6 +69,7 @@ body {
 
 .container {
   @include flexBox(column);
+  width: 100vw;
   min-height: 100vh;
  
   @include mobile{
@@ -78,4 +79,8 @@ body {
   @include tablet{
    font-size: em(14px);
   }
+ }
+
+ main {
+   margin-top: em(140px);
  }

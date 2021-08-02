@@ -444,6 +444,7 @@ body {
   justify-content: flex-start;
   align-items: stretch;
   flex-wrap: nowrap;
+  width: 100vw;
   min-height: 100vh;
 }
 @media screen and (max-width: 767px) {
@@ -457,25 +458,29 @@ body {
   }
 }
 
-.header__wrap {
-  height: 5.75em;
-  z-index: 1000;
+main {
+  margin-top: 8.75em;
 }
-.header__wrap::after {
-  content: "";
-  display: block;
-  clear: both;
+
+.header__wrap {
+  width: 100vw;
+  height: 8.75em;
+  padding-top: 1.875em;
+  padding-bottom: 1.875em;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 }
 
 .header {
   width: 100vw;
+  max-width: 1820px;
   height: auto;
-  padding-top: 1.875em;
-  padding-bottom: 1.875em;
   background: #fff;
   float: left;
-  position: fixed;
-  top: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 .header__logo {
   width: 150px;
@@ -505,6 +510,11 @@ body {
     padding-bottom: 0;
   }
 }
+.header__menu::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 .header__menu a {
   text-decoration: none;
   color: inherit;
@@ -522,8 +532,7 @@ body {
     flex-wrap: nowrap;
     width: 200px;
     margin-left: 60px;
-    margin-top: -63px;
-    margin-bottom: 45px;
+    margin-top: -23px;
   }
 }
 .header__menu__desktopView__item a {
@@ -568,9 +577,8 @@ body {
   width: 33px;
   height: 27px;
   cursor: pointer;
-  position: absolute;
-  right: 1.875em;
-  top: 2.5em;
+  float: right;
+  margin-top: -1.5%;
   transition: all 300ms;
 }
 .header__menu__open:focus, .header__menu__open:hover {
@@ -622,8 +630,8 @@ body {
   cursor: pointer;
   transform: rotateZ(0deg);
   position: absolute;
-  top: 1em;
-  right: 1em;
+  top: 1.5625em;
+  right: 2.75em;
   transition: all 200ms;
 }
 .header__menuAll.active .menu__close:hover, .header__menuAll.active .menu__close:focus {
@@ -663,10 +671,8 @@ body {
 }
 
 .visual {
-  width: 100vw;
-  max-width: 1920px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  max-width: 1820px;
   position: relative;
 }
 .visual__wrap::after {
@@ -675,7 +681,6 @@ body {
   clear: both;
 }
 .visual__item {
-  padding-right: 0 5.3125em;
   position: relative;
 }
 .visual__item__image {
@@ -683,6 +688,7 @@ body {
   min-width: 750px;
   max-width: 968px;
   height: auto;
+  overflow: hidden;
   opacity: 0;
 }
 .visual__item__content {
@@ -710,7 +716,6 @@ body {
   color: inherit;
   line-height: 1.5em;
   padding-bottom: 3.5em;
-  padding-right: 0.1875em;
   opacity: 0;
 }
 .visual__item__content__text span {
@@ -745,7 +750,7 @@ body {
 .visual__navigation {
   text-align: right;
   position: absolute;
-  bottom: 2.5vw;
+  bottom: 1vw;
   right: 4.625em;
   z-index: 2;
 }
@@ -775,7 +780,7 @@ body {
   content: "⟶";
 }
 .visual__state {
-  position: relative;
+  position: absolute;
   bottom: 510px;
   text-align: right;
   right: 5.25em;
@@ -940,6 +945,74 @@ body {
     bottom: 14.6875em;
     left: 1.25em;
   }
+}
+
+.happyPlay {
+  color: #fff;
+  padding-top: 10em;
+  padding-bottom: 10em;
+  background-color: #03141C;
+}
+@media screen and (max-width: 1023px) {
+  .happyPlay {
+    margin-top: 0em;
+    padding-top: 6.25em;
+    padding-bottom: 6.25em;
+  }
+}
+.happyPlay .content_title {
+  text-align: center;
+}
+.happyPlay .content_title * {
+  display: block;
+}
+.happyPlay .content_title .smallTitle {
+  font-size: 1.5em;
+  color: #666;
+}
+.happyPlay .content_title .bigTitle {
+  font-family: "Noto Sans KR";
+  font-size: 4em;
+  font-weight: 700;
+  letter-spacing: -0.09375em;
+  color: inherit;
+}
+@media screen and (max-width: 1023px) {
+  .happyPlay .content_title .bigTitle {
+    font-size: 2.75em;
+    letter-spacing: 0;
+  }
+}
+.happyPlay__slide {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+}
+.happyPlaySlide__item__image {
+  padding: 5.625em 0 1.875em 0;
+}
+.happyPlaySlide__item__content.is-wrap p {
+  width: 28.375em;
+  line-height: 1.5em;
+  padding-bottom: 0.375em;
+}
+@media screen and (max-width: 1023px) {
+  .happyPlaySlide__item__content.is-wrap p {
+    width: 26.25em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .happyPlaySlide__item__content.is-wrap p {
+    width: 14.375em;
+  }
+}
+.happyPlaySlide__item__content__title {
+  font-family: "Noto Sans KR";
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -0.09375em;
+  color: inherit;
 }
 
 /*# sourceMappingURL=style.css.map */
